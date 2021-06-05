@@ -30,14 +30,14 @@ Split data to train and test - Malaysia dataset
 for bug in ['catopsilia-pomona', 'danaus-chrysippus', 'eurema-hecabe', 'graphium-doson',
             'graphium-sarpedon', 'junonia-hedonia', 'junonia-iphita', 'papilio-demoleus']:
     print(bug)
-    prep_data(directory='/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/',
+    prep_data(directory='/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/',
               species=bug,
               train_size=700,
               test_size=194)
 
 # Set directories
-train_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/train'
-test_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/test'
+train_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/train'
+test_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/test'
 
 train_size = 5600 # number of images in the train folder; doubled after augmentation
 test_size = 1552  # number of images in the test folder

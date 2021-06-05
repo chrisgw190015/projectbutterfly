@@ -213,11 +213,11 @@ def visualize_predictions_svm(classifier):
             shutil.copyfile(f, full_output_path)
 
 # softmax
-model = tf.keras.models.load_model('/Users/chris/Desktop/MasterofDataScience/thesis_related/projectbutterflyclassifier/final-model-softmax-manualaug.h5')
+model = tf.keras.models.load_model('/Users/chris/Desktop/MasterofDataScience/thesis_related/projectbutterfly/final-model-softmax-manualaug.h5')
 visualize_predictions(model)
 
 # svm
-svm_model = load('/Users/chris/Desktop/MasterofDataScience/thesis_related/projectbutterflyclassifier/final-model-svm-manualaug.joblib')
+svm_model = load('/Users/chris/Desktop/MasterofDataScience/thesis_related/projectbutterfly/final-model-svm-manualaug.joblib')
 visualize_predictions_svm(svm_model)
 
 ###############################################################################################

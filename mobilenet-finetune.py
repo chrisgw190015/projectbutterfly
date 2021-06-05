@@ -23,14 +23,14 @@ from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
 from keras.layers import Dropout
 
-train_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/train'
-test_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/test-all'
+train_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/train'
+test_path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/test-all'
 # paths to offline augmented data
-fliphori = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/fliphori'
-flipverti = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/flipverti'
-gamma = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/gamma'
-rotate = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/rotate'
-gaussian = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/gaussian'
+fliphori = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/fliphori'
+flipverti = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/flipverti'
+gamma = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/gamma'
+rotate = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/rotate'
+gaussian = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/gaussian'
 
 train_size = 5600 # with offline augmentation 5600 * 6
 test_size = 1552

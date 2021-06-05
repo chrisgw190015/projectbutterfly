@@ -18,7 +18,7 @@ import matplotlib
 """
 Plot the transformations for 1 sample image
 """
-image = imageio.imread('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/train/0/0009catopsilia-pomona.jpg')
+image = imageio.imread('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/train/0/0009catopsilia-pomona.jpg')
 ia.imshow(image)
 
 # Rotate
@@ -46,7 +46,7 @@ ia.imshow(flip_vr_image)
 imageio.imwrite('/Users/chris/Desktop/flipvr0009catopsilia-pomona.jpg', flip_vr_image)
 
 # Gamma contrast
-image = imageio.imread('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/train/0/0009catopsilia-pomona.jpg')
+image = imageio.imread('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/train/0/0009catopsilia-pomona.jpg')
 contrast=iaa.GammaContrast(gamma=1.5)
 contrast_image =contrast.augment_image(image)
 ia.imshow(contrast_image)
@@ -76,7 +76,7 @@ def convert_rgb(path):
         rgb_im = image.convert('RGB')
         rgb_im.save(f)
 
-convert_rgb('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/0') # folder for class 0 - 7
+convert_rgb('/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/0') # folder for class 0 - 7
 
 # Rotate
 def rotation(path):
@@ -93,7 +93,7 @@ def rotation(path):
         rotated_image = rotate.augment_image(image)
         imageio.imwrite(os.path.join(path, f), rotated_image)
 
-path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/rotate/4' # folder for class 0 - 7
+path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/rotate/4' # folder for class 0 - 7
 rotation(path=path)
 
 # Horizontal flip
@@ -111,7 +111,7 @@ def fliphr(path):
         flip_hr_image = flip_hr.augment_image(image)
         imageio.imwrite(os.path.join(path, f), flip_hr_image)
 
-path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/fliphori/4' # folder for class 0 - 7
+path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/fliphori/4' # folder for class 0 - 7
 fliphr(path=path)
 
 # Gamma contrast
@@ -129,7 +129,7 @@ def gamma(path):
         contrast_image =contrast.augment_image(image)
         imageio.imwrite(os.path.join(path, f), contrast_image)
 
-path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/gamma/4' # folder for class 0 - 7
+path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/gamma/4' # folder for class 0 - 7
 gamma(path=path)
 
 # Gaussian noise
@@ -147,7 +147,7 @@ def gaussian(path):
         noise_image = gaussian_noise.augment_image(image)
         imageio.imwrite(os.path.join(path, f), noise_image)
 
-path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/gaussian/7' # folder for class 0 - 7
+path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/gaussian/7' # folder for class 0 - 7
 gaussian(path=path)
 
 # Vertical flip
@@ -165,7 +165,7 @@ def flipverti(path):
         flip_vr_image= flip_vr.augment_image(image)
         imageio.imwrite(os.path.join(path, f), flip_vr_image)
 
-path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/draft_data/augmented/train/flipverti/7' # folder for class 0 - 7
+path = '/Users/chris/Desktop/MasterofDataScience/thesis_related/dataset/final/augmented/train/flipverti/7' # folder for class 0 - 7
 flipverti(path=path)
 
 ###############################################################################################
