@@ -12,4 +12,4 @@ FILES:
 7. imagesorter.py - code for sorting images to either trained species or unidentifiable
 
 FOLDER: 
-1. results - contain trained models
+1. trained-models - contain trained models
