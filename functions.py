@@ -88,13 +88,23 @@ def features_mobile1(directory, sample_count, img_width, img_height, outputdim, 
             break
     return features, labels
 
+def add_noise(img):
+    '''Add random noise to an image'''
+    VARIABILITY = 50
+    deviation = VARIABILITY*random.random()
+    noise = np.random.normal(0, deviation, img.shape)
+    img += noise
+    np.clip(img, 0., 255.)
+    return img
+
 # MobileNetV1 with augmentation
 def features_aug_mobile1(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen_aug = ImageDataGenerator(rescale = 1./255,
-                                 shear_range = 0.2,
-                                 zoom_range = 0.2,
+                                 rotation_range=45,
                                  horizontal_flip = True,
-                                 vertical_flip = True
+                                 vertical_flip = True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise
                                  )
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 1024))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
@@ -147,10 +157,11 @@ def features_mobile2(directory, sample_count, img_width, img_height, outputdim, 
 # MobileNetV2 with augmentation
 def features_aug_mobile2(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen_aug = ImageDataGenerator(rescale = 1./255,
-                                 shear_range = 0.2,
-                                 zoom_range = 0.2,
+                                 rotation_range=45,
                                  horizontal_flip = True,
-                                 vertical_flip = True)
+                                 vertical_flip = True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise)
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 1280))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
 
@@ -202,10 +213,11 @@ def features_eff0(directory, sample_count, img_width, img_height, outputdim, num
 # EfficientNetB0 with augmentation
 def features_aug_eff0(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen_aug = ImageDataGenerator(rescale = 1./255,
-                                 shear_range = 0.2,
-                                 zoom_range = 0.2,
+                                 rotation_range=45,
                                  horizontal_flip = True,
-                                 vertical_flip = True)
+                                 vertical_flip = True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise)
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 1280))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
 
@@ -261,10 +273,11 @@ def features_vgg16(directory, sample_count, img_width, img_height, outputdim, nu
 # with augmentation
 def features_vgg16_aug(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen = ImageDataGenerator(rescale = 1./255,
-                                 shear_range=0.2,
-                                 zoom_range=0.2,
+                                 rotation_range=45,
                                  horizontal_flip=True,
-                                 vertical_flip= True)
+                                 vertical_flip= True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise)
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 512))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
 
@@ -318,10 +331,11 @@ def features_vgg19(directory, sample_count, img_width, img_height, outputdim, nu
 # with augmentation
 def features_vgg19_aug(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen = ImageDataGenerator(rescale = 1./255,
-                                 shear_range=0.2,
-                                 zoom_range=0.2,
+                                 rotation_range=45,
                                  horizontal_flip=True,
-                                 vertical_flip=True)
+                                 vertical_flip=True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise)
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 512))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
 
@@ -375,10 +389,11 @@ def features_resnet(directory, sample_count, img_width, img_height, outputdim, n
 # with augmentation
 def features_resnet_aug(directory, sample_count, img_width, img_height, outputdim, num_classes):
     datagen = ImageDataGenerator(rescale = 1./255,
-                                 shear_range=0.2,
-                                 zoom_range=0.2,
+                                 rotation_range=45,
                                  horizontal_flip=True,
-                                 vertical_flip=True
+                                 vertical_flip=True,
+                                 brightness_range=[0.2,1.0],
+                                 preprocessing_function=add_noise
                                  )
     features = np.zeros(shape = (sample_count, outputdim, outputdim, 2048))
     labels = np.zeros(shape = (sample_count, num_classes)) # match number of classes
