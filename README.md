@@ -1,4 +1,4 @@
-# WOX7002 Research Project
+# WQD7002 Research Project
 This repository contains scripts and trained models for my Master of Data Science Research Project - Automated Butterfly Wings' Classifier using Machine Learning
 
 FILES:
